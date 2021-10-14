@@ -5,9 +5,20 @@
 console.log('--- Question 1 ---');
 /* créer une Promesse qui renvoie un nombre aléatoire au bout de 2 secondes.
   Si ce nombre est pair, le résoudre, sinon le rejeter.
-
   Utiliser setTimeout().
 */
+const myPromise = new Promise(function (resolve, reject){
+    setTimeout(function (){
+        const myRandomNumber = Math.floor(Math.random() * 100);
+        if (myRandomNumber%2 === 0){
+            resolve(myRandomNumber + " est paire !");
+        }else
+            reject(myRandomNumber + " n'est pas paire !")
+    }, 2000)
+})
+myPromise.then(function (myNumber){
+    console.log(myNumber)
+})
 
 console.log('--- Question 2 ---');
 /* Consommer la Promesse de 1) pour

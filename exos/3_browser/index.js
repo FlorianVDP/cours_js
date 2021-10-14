@@ -11,15 +11,30 @@
 */
 
 const colors = [
-  'white',
-  'blue',
-  'red',
-  'green',
-  'black',
-  'grey',
-  'orange',
-  'purple',
+    'white',
+    'blue',
+    'red',
+    'green',
+    'black',
+    'grey',
+    'orange',
+    'purple',
 ];
+colors.forEach((item, i) => {
+    const myDiv = document.createElement("div");
+    myDiv.classList.add('color');
+    myDiv.style.backgroundColor = item;
+    myDiv.textContent = i + '.' + item;
+    document.getElementById('exo1').append(myDiv)
+    //console.log(myDiv);
+    myDiv.addEventListener(
+        "click",
+        function () {
+            document.body.style.backgroundColor = item;
+        }
+    )
+});
+
 
 // -------------------------------
 
@@ -29,7 +44,19 @@ const colors = [
     - Lui ajouter un listener au mousemove, qui change sa largeur
     en fonction de la position en Y de la souris à l'écran (event.clientY)
 */
-
+const mySectionExo2 = document.createElement("section");
+mySectionExo2.id = "exo2";
+document.body.append(mySectionExo2);
+const myDiv2 = document.createElement('div');
+myDiv2.classList.add('myDiv2');
+mySectionExo2.append(myDiv2);
+myDiv2.addEventListener(
+    "mousemove",
+    function () {
+        const mousePosition = event.clientY;
+        this.style.width = mousePosition + 'px';
+    }
+)
 // -------------------------------
 
 /* Exercice 3: Timer
@@ -41,7 +68,37 @@ const colors = [
     - Stocker dans le localstorage l'info du nb de points
     pour recharger la page avec le bon nombre de points dès le début
 */
+const mySectionExo3 = document.createElement("section");
+mySectionExo3.id = "exo3";
+document.body.append(mySectionExo3);
+const myDiv3 = document.createElement('div');
+myDiv3.classList.add('nb');
+mySectionExo3.append(myDiv3);
+const myDiv4 = document.createElement('div');
+myDiv4.classList.add('dots');
+mySectionExo3.append(myDiv4);
 
+let compteurLocalStorage = localStorage.getItem('compteur');
+let compteur = 0;
+if (compteurLocalStorage) {
+    compteur = parseInt(localStorage.getItem('compteur'));
+}
+for (let i = 0; i <= compteur; i++){
+    const dot = document.createElement('div');
+    dot.classList.add('dot');
+    myDiv4.append(dot);
+}
+myDiv3.textContent = compteur;
+const time = setInterval(function () {
+        compteur += 1;
+        myDiv3.textContent = compteur;
+        localStorage.setItem('compteur', compteur)
+        const dot = document.createElement('div');
+        dot.classList.add('dot');
+        myDiv4.append(dot);
+    },
+    1000
+);
 // -------------------------------
 
 /* Exercice 4: Contrôle au clavier
@@ -51,7 +108,53 @@ const colors = [
     - Exécuter chacun des 3 premiers exercices lorsque la page est vide en appuyant sur ENTER
     - Faire en sorte de d'arrêter le timer quand on appuie sur S, et de le relancer en réappuyant
 */
+let timerState = 'on';
+document.addEventListener(
+    'keydown',
+    function () {
+        document.body.style.backgroundColor = colors[event.key];
+        console.log(event.key);
+        if (event.key === 'S') {
+            if (timerState === 'on') {
+                clearInterval(time);
+                timerState = 'off'
+            } else {
+                //setInterval(time);
+                timerState = 'on'
+            }
 
+        }
+    }
+)
+//-----_____-----_____----- Correction
+
+/*
+document.addEventListener('keydown', function (event) {
+    const key = event.key;
+    const isCtrl = event.metaKey;
+
+    if (key >= 1 && key < colors.length) {
+        document.body.style.background = colors[event.key - 1];
+    } else if (isCtrl && key === 'r') {
+        event.preventDefault();
+        exo1.remove();
+        exo2.remove();
+        exo3.remove();
+        exoBonus.remove();
+    } else if (key === 'Enter') {
+        document.body.append(exo1);
+        document.body.append(exo2);
+        document.body.append(exo3);
+        document.body.append(exoBonus);
+    } else if (key === 's') {
+        if (interval) {
+            interval = clearInterval(interval);
+        } else {
+            interval = startCounting();
+        }
+    }
+});
+*/
 // -------------------------------
 
 /* Exercice BONUS: Harry Potter
@@ -66,28 +169,28 @@ const colors = [
 */
 
 const characters = [
-  {
-    name: 'Harry',
-    src: 'static/Harry_Potter_character_poster.jpeg',
-  },
-  {
-    name: 'Hermione',
-    src: 'static/Hermione_Granger_poster.jpeg',
-  },
-  {
-    name: 'Ron',
-    src: 'static/Ron_Weasley_poster.jpeg',
-  },
-  {
-    name: 'Sirius',
-    src: 'static/Sirius_Black.jpeg',
-  },
-  {
-    name: 'Rubeus',
-    src: 'static/RubeusHagrid.jpeg',
-  },
-  {
-    name: 'Albus',
-    src: 'static/Dumbledore_and_Elder_Wand.jpeg',
-  },
+    {
+        name: 'Harry',
+        src: 'static/Harry_Potter_character_poster.jpeg',
+    },
+    {
+        name: 'Hermione',
+        src: 'static/Hermione_Granger_poster.jpeg',
+    },
+    {
+        name: 'Ron',
+        src: 'static/Ron_Weasley_poster.jpeg',
+    },
+    {
+        name: 'Sirius',
+        src: 'static/Sirius_Black.jpeg',
+    },
+    {
+        name: 'Rubeus',
+        src: 'static/RubeusHagrid.jpeg',
+    },
+    {
+        name: 'Albus',
+        src: 'static/Dumbledore_and_Elder_Wand.jpeg',
+    },
 ];
