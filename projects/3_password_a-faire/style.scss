@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+$main-color : #5f27cd;
+$noir : #222f3e;
+$blanc : #ffffff;
+body{
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $main-color;
+  font-family: 'Roboto', sans-serif;
+  form{
+    box-sizing: border-box;
+    background-color: $blanc;
+    padding: 4em;
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    gap: 2em;
+    max-width: 600px;
+    width: 100%;
+    div.wrapper{
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      &:not(:last-of-type){
+      }
+      label{
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+      input{
+        &[type=checkbox]{
+          margin-left: 1em;
+          accent-color: $main-color;
+        }
+      }
+      &:first-of-type{
+        justify-content: space-between;
+        column-gap: 2em;
+        row-gap: 1em;
+        label{
+          flex-basis: 100%;
+        }
+        input{
+          &:first-of-type{
+            width: 50px;
+            padding: .5em;
+            border: none;
+            border-bottom: 1px solid rgba(#222f3e, .25);
+            box-sizing: content-box;
+          }
+          &:last-of-type{
+            flex-basis: auto;
+            flex-grow: 1;
+
+          }
+        }
+      }
+    }
+    button#submit{
+      border: 2px solid $main-color;
+      padding: 1em 2em;
+      border-radius: 100px;
+      background-color: transparent;
+      color: $main-color;
+      text-transform: uppercase;
+      font-weight: bolder;
+      margin-top: 2em;
+      transition: all ease-in-out 150ms;
+      cursor: pointer;
+      &:hover, &:focus{
+        background-color: rgba($main-color, 1);
+        color: $blanc;
+      }
+    }
+    #resultat{
+      border: 1px solid rgba($noir, .25);
+      padding: 1em 1em;
+      overflow: hidden;
+      color: rgba($noir, .25);
+      cursor: default;
+      outline: none;
+      &.active{
+        color: rgba($noir, 1);
+        cursor: copy;
+      }
+    }
+  }
+}

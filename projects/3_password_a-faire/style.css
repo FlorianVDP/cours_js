@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
+body {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #5f27cd;
+  font-family: "Roboto", sans-serif;
+}
+body form {
+  box-sizing: border-box;
+  background-color: #ffffff;
+  padding: 4em;
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  gap: 2em;
+  max-width: 600px;
+  width: 100%;
+}
+body form div.wrapper {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+body form div.wrapper label {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+body form div.wrapper input[type=checkbox] {
+  margin-left: 1em;
+  accent-color: #5f27cd;
+}
+body form div.wrapper:first-of-type {
+  justify-content: space-between;
+  column-gap: 2em;
+  row-gap: 1em;
+}
+body form div.wrapper:first-of-type label {
+  flex-basis: 100%;
+}
+body form div.wrapper:first-of-type input:first-of-type {
+  width: 50px;
+  padding: 0.5em;
+  border: none;
+  border-bottom: 1px solid rgba(34, 47, 62, 0.25);
+  box-sizing: content-box;
+}
+body form div.wrapper:first-of-type input:last-of-type {
+  flex-basis: auto;
+  flex-grow: 1;
+}
+body form button#submit {
+  border: 2px solid #5f27cd;
+  padding: 1em 2em;
+  border-radius: 100px;
+  background-color: transparent;
+  color: #5f27cd;
+  text-transform: uppercase;
+  font-weight: bolder;
+  margin-top: 2em;
+  transition: all ease-in-out 150ms;
+  cursor: pointer;
+}
+body form button#submit:hover, body form button#submit:focus {
+  background-color: #5f27cd;
+  color: #ffffff;
+}
+body form #resultat {
+  border: 1px solid rgba(34, 47, 62, 0.25);
+  padding: 1em 1em;
+  overflow: hidden;
+  color: rgba(34, 47, 62, 0.25);
+  cursor: default;
+  outline: none;
+}
+body form #resultat.active {
+  color: #222f3e;
+  cursor: copy;
+}
+
+/*# sourceMappingURL=style.css.map */

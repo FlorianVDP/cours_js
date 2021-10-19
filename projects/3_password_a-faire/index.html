@@ -1,22 +1,61 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="utf-8" />
+<head>
+  <meta charset="utf-8" />
 
-    <meta description="Projet Autocomplete" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta description="Projet Autocomplete" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link
-      rel="stylesheet"
-      href="https://necolas.github.io/normalize.css/latest/normalize.css"
-    />
-    <link rel="stylesheet" href="../../styles/reset.css" />
-    <link rel="stylesheet" href="./style.css" />
+  <link
+          rel="stylesheet"
+          href="https://necolas.github.io/normalize.css/latest/normalize.css"
+  />
+  <link rel="stylesheet" href="../../styles/reset.css" />
+  <link rel="stylesheet" href="./style.css" />
 
-    <script type="module" src="./index.js" defer></script>
+  <script type="module" src="./index.js" defer></script>
 
-    <title>Autocomplete</title>
-  </head>
+  <title>VANDER PUT | Password Generator</title>
+</head>
 
-  <body></body>
+<body>
+<form action="#">
+  <div class="wrapper">
+    <label for="lenght">Longueur</label>
+    <input type="number" min="8" step="1" id="lenght2" placeholder="8">
+    <input type="range" min="8" max="50" step="1" id="lenght" list="tickmarks">
+    <datalist id="tickmarks">
+      <option value="8" label="8">
+      <option value="10">
+      <option value="15">
+      <option value="20">
+      <option value="25">
+      <option value="30" label="30">
+      <option value="35">
+      <option value="40">
+      <option value="45">
+      <option value="50" label="50">
+    </datalist>
+  </div>
+
+
+  <div class="wrapper">
+    <label for="numbers">Chiffres</label>
+    <input type="checkbox" id="numbers">
+  </div>
+
+  <div class="wrapper">
+    <label for="specials">Caractères spéciaux</label>
+    <input type="checkbox" id="specials">
+  </div>
+
+  <div class="wrapper">
+    <label for="uppercases">Majuscules</label>
+    <input type="checkbox" id="uppercases">
+  </div>
+
+  <button id="submit">Générer</button>
+  <input type="text" id="resultat" placeholder="Votre mot de passe">
+</form>
+</body>
 </html>
