@@ -5,6 +5,7 @@ const specials = document.getElementById('specials');
 const uppercases = document.getElementById('uppercases');
 const submit = document.getElementById('submit');
 const resultat = document.getElementById('resultat');
+const finalPassword = [];
 lenght.value = 8;
 function getNumber(){
     const randomNumber = Math.floor(Math.random() * 10);
@@ -51,8 +52,8 @@ submit.addEventListener('click', function (){
             i++;
         }
         password = password + getLetter();
-
     }
+    password = password.split('').sort(function(){return 0.5-Math.random()}).join('');
     resultat.classList.add('active')
     resultat.value = password;
     return password;
