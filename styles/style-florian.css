@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
+html {
+  background-color: #15202B;
+}
+html body {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  font-family: "Montserrat", sans-serif;
+}
+html body h1 {
+  position: fixed;
+  color: #ffffff;
+  margin: 1em 0;
+}
+html body button:not(.favoris) {
+  position: fixed;
+  top: 4em;
+  background-color: #198CD8;
+  padding: 1em 2em;
+  color: #ffffff;
+  border: none;
+  border-radius: 100px;
+}
+html body button:not(.favoris):hover, html body button:not(.favoris):focus {
+  background-color: #167dc1;
+  cursor: pointer;
+}
+html body ol {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 0 auto;
+}
+html body ol li {
+  padding: 2em;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: all ease-in-out 150ms;
+  border-bottom-width: 0.5px;
+  color: #ffffff;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 1em;
+  row-gap: 0.5em;
+  position: relative;
+}
+html body ol li.active {
+  border: 1px solid rgba(249, 24, 128, 0.5);
+}
+html body ol li button {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 100px;
+  box-shadow: 0px 0px 0px 10px rgba(249, 24, 128, 0);
+  transition: all ease-in-out 150ms;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+}
+html body ol li button.active {
+  background-color: #f91880;
+}
+html body ol li button:hover {
+  box-shadow: 0px 0px 0px 10px rgba(249, 24, 128, 0.1);
+  border: 2px solid #f91880;
+  cursor: pointer;
+}
+html body ol li img {
+  border-radius: 100px;
+}
+html body ol li a {
+  font-weight: bold;
+  flex-basis: content;
+}
+html body ol li a:hover, html body ol li a:focus {
+  text-decoration: underline;
+}
+html body ol li span {
+  flex-basis: content;
+  color: rgba(255, 255, 255, 0.25);
+}
+html body ol li p {
+  flex-basis: 100%;
+  line-height: 1.5em;
+}
+html body ol li:hover, html body ol li:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=style-florian.css.map */
